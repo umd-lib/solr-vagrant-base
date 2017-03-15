@@ -1,0 +1,5 @@
+/dist/*.tar.gz
+/dist/*.tgz
+/dist/*.jks
+/package.box
+/.vagrant/
