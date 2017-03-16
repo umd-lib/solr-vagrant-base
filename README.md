@@ -90,8 +90,8 @@ SHELL
 To run the base box itself, do the following:
 
 ```bash
-git clone git@github.com:umd-lib/solr-vagrant.git
-cd solr-vagrant
+git clone git@github.com:umd-lib/solr-vagrant-base.git
+cd solr-vagrant-base
 # download a Java 8 JDK into the dist folder
 vagrant up
 ```
