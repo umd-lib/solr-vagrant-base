@@ -1,4 +1,4 @@
-# solr-vagrant
+# solr-vagrant-base
 
 Vagrant base box with Java 8 and Solr 6 on CentOS 6.
 
@@ -28,7 +28,7 @@ Your Solr instance will be available at <http://192.168.40.222:8984>.
 
 ### Enabling HTTPS
 
-It is very simple to enable HTTPS. The base box includes a script to [generate a self-signed HTTPS cert](scripts/https-cert.sh).
+It is very simple to enable HTTPS. The base box includes a script to [generate a self-signed HTTPS cert](files/https-cert.sh).
 
 Just create a `dist` folder on your host, and add a synced `/apps/dist` folder to the Vagrantfile:
 
@@ -63,7 +63,7 @@ Note that the first time you visit that URL, your browser will present you with 
 
 ### Deploying Cores
 
-You can also easily deploy cores from synced folders. These folders can be Git repositories, in which case the [deploy script](scripts/core.sh) uses `git clone`. Otherwise, the deploy script falls back to a recursive copy (`cp -rp`).
+You can also easily deploy cores from synced folders. These folders can be Git repositories, in which case the [deploy script](files/core.sh) uses `git clone`. Otherwise, the deploy script falls back to a recursive copy (`cp -rp`).
 
 The `core.sh` script takes 1 or 2 arguments. The first argument is the path to the core source directory (on the VM). The second argument is the name to use for the core in Solr. If no name is given, it defaults to the basename of the source directory path.
 

@@ -1,4 +1,4 @@
-# solr-vagrant/dist
+# solr-vagrant-base/dist
 
 This is the directory that holds the distribution archives for
 some of the applications needed to run Solr. See
