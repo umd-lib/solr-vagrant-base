@@ -98,7 +98,11 @@ vagrant up
 
 ### Building the Base Box
 
-Bring up the base box as above, then run `vagrant package`.
+Bring up the base box as above, then run `vagrant package --output solr.box`.
+
+### Deploying the Base Box to Nexus
+
+Package the base box as above, then run `mvn deploy`. The box will be uploaded to the UMD Nexus releases or snapshots repository based on the project version specified in the pom.
 
 ## License
 
