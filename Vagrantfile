@@ -11,7 +11,12 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "dist", "/apps/dist"
 
   # Puppet Modules
-  config.vm.provision "shell", inline: 'puppet module install puppetlabs-firewall'
+  config.vm.provision "shell", inline: <<-SHELL
+    # puppetlabs-stdlib is "pinned" to v4.22.0
+    puppet module install puppetlabs-stdlib --version 4.22.0
+    # puppetlabs-firewall is "pinned" to v1.10.0
+    puppet module install puppetlabs-firewall --version 1.10.0
+  SHELL
 
   # system provisioning
   config.vm.provision "puppet", manifest_file: 'solr.pp', environment: 'local'
